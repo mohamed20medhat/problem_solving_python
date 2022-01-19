@@ -14,13 +14,17 @@ def potato(x,y):
     units = (x % 10)
     # now we need to get the smaller dicimal numbers from x. 
     product_result = (x-units) * y
-    print(units)
-    
-    for i in range(y):
-        units += units+1
+    # i don't want units to move 
+    # i will need a container for the original units that gets modified. 
+    # then i will need another container for the number that follows it
+    original_number = units
+    added_to_original = 0
+
+    for i in range(1,y):
+        added_to_original = original_number + i
+        units += added_to_original  
+
     submission_result = product_result + units 
-    print(product_result)
-    print(units)
 
     return submission_result
 
