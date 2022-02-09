@@ -15,6 +15,7 @@ def first_method():
 
 
 # i can convert the list into a set. and remove the maximum number. then get the max. this will give me the second max num. and this is better cause sets doesn't allow repetion. so no need to worry about multible elements with the same value sorted after each other 
+#* array to set solution => https://youtu.be/JiEOD_wlU1U
 def second_method_SET():
     li = [1,2,3,4,5,6,7,1,3,4,2,1]
     my_set = set (li)
@@ -36,9 +37,24 @@ def find_the_x_max_or_min(arr, min_max, number_of_element):
             my_set.remove(max(my_set))
         return max(my_set)
 # note that it starts from 0. so if you wanted to get the max. you put the number_of_element = 0
-print(find_the_x_max_or_min(li,'max',0))
+# print(find_the_x_max_or_min(li,'max',0))
+
+# this is so far the best solution that i got to. but it's still not good enough cause the conversion from list to a set may take more time. but in the same time. if i did it manually i don't know if i could write a more efficient code than this so far. so i will search for better solutions 
 
 
+#* there is another way. which is to use 2 varyables. 1 will work as the max and the other will work as the second max some thing like this : https://www.youtube.com/watch?v=k2J0kOqYTOk
+def find_second_max(arr):
+    max_num = -10000000000000000000
+    second_max = -10000000000000000000
+    for i in arr : 
+        if max_num < i :
+            second_max = max_num
+            max_num = i
+        elif (i > second_max) and (i < max_num):
+            second_max = i
+    return second_max
+
+print(find_second_max(li))
 
 
 
