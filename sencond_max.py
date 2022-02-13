@@ -14,6 +14,26 @@ def first_method():
 # the problem with it is that i can't get the second largest element cause i don't know if there are repeated elements in it. if an element was repeated then l[-2] will return the same as l[-1]. so there must be another way
 
 
+#* there is another way. which is to use 2 varyables. 1 will work as the max and the other will work as the second max some thing like this : https://www.youtube.com/watch?v=k2J0kOqYTOk
+def find_second_max(arr):
+    max_num = -10000000000000000000
+    second_max = -10000000000000000000
+    for i in arr:
+        if max_num < i:
+            second_max = max_num
+            max_num = i
+        elif (i > second_max) and (i < max_num):
+            second_max = i
+    return second_max
+
+
+# print(find_second_max(li))
+
+
+
+
+
+
 # i can convert the list into a set. and remove the maximum number. then get the max. this will give me the second max num. and this is better cause sets doesn't allow repetion. so no need to worry about multible elements with the same value sorted after each other 
 #* array to set solution => https://youtu.be/JiEOD_wlU1U
 def second_method_SET():
@@ -41,20 +61,6 @@ def find_the_x_max_or_min(arr, min_max, number_of_element):
 
 # this is so far the best solution that i got to. but it's still not good enough cause the conversion from list to a set may take more time. but in the same time. if i did it manually i don't know if i could write a more efficient code than this so far. so i will search for better solutions 
 
-
-#* there is another way. which is to use 2 varyables. 1 will work as the max and the other will work as the second max some thing like this : https://www.youtube.com/watch?v=k2J0kOqYTOk
-def find_second_max(arr):
-    max_num = -10000000000000000000
-    second_max = -10000000000000000000
-    for i in arr : 
-        if max_num < i :
-            second_max = max_num
-            max_num = i
-        elif (i > second_max) and (i < max_num):
-            second_max = i
-    return second_max
-
-print(find_second_max(li))
 
 
 
