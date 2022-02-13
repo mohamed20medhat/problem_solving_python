@@ -24,6 +24,42 @@ name.sort()
 for nm in name :
     print(nm)
 
+#########################################################################################
+#########################################################################################
+#########################################################################################
+
+# another solution using dictionary => https://youtu.be/_wnf8s0N0Tk
+grades = []
+# i will get the grades in a list to find the second smallest number using it
+grade_to_name = {}
+# i will make a dictionary. that i will store key value pears of grade and a list of students who have got that grade
+
+if __name__ == '__main__':
+  for _ in range(int(input())):
+    name = input()
+    score = float(input())
+    grades.append(score)
+    if score not in grade_to_name:
+      # if there is no key "score" in the dic. create a new key
+      grade_to_name[score] = [name]
+    else:
+      # else -> the key "grade" already exists. add the name to the list of              students who got that grade
+      grade_to_name[score].append(name)
+
+  # convert the list to set to remove duplicates. then convert it back into a        list and sort it. to get the second smallest grade
+  grades = sorted(set(grades))
+  second_min = grades[1]  # the second smallest will have index 1
+  # sort the list of names that got the second_smallest_grades in the dictionary     and print each name in it
+  grade_to_name[second_min].sort()
+  for nm in grade_to_name[second_min]:
+    print(nm)
+
+
+
+
+
+
+
 
 
 
