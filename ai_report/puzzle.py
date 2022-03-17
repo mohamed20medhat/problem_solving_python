@@ -16,7 +16,7 @@ def human_solve(puzzle):
                 print('thanks for playing')
                 return
             print('you typed an unavilable action. please type one of the avilable actions')
-            action = input("your action:")
+            action = input("your action: ")
 
         puzzle = apply_action(puzzle, action) #? take the action and convert the puzzle into it's new form
         if check_puzzle(puzzle): #? check if the problem is solved after appling the actions 
